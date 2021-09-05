@@ -1,0 +1,19 @@
+extends layout
+
+block content
+  h1= title
+  p 欢迎来到我的 #[em 本地图书馆]！这是一个图书管理系统，可以添加你喜欢的书目，让我们一起沉浸在书的海洋吧！
+
+  h1 动态
+
+  if error
+    p Error getting dynamic content.
+  else
+    p 现在我的图书馆:
+
+    ul
+      li #[strong 书籍:] !{data.book_count} 种
+      li #[strong 副本:] !{data.book_instance_count} 本
+      li #[strong 可借副本:] !{data.book_instance_available_count} 本
+      li #[strong 作者:] !{data.author_count} 位
+      li #[strong 类型:] !{data.genre_count} 种
